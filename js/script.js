@@ -1,11 +1,12 @@
+
 "use strict";
 var gameTimer;
-var first = null;
-var second = null;
 var matchedAlready = false;
 var matchesLeftCounter = 8;
 var matchCounter = 0;
 var missedCounter = 0;
+
+var clickCount = 0;
 
 function onReady() {
 	$('#victory').hide();
@@ -29,7 +30,7 @@ for(var i = 0; i < 16; i++) {
 	var singleSquare = $(document.createElement('img'));
 	var picture = finalSet[i];
 	singleSquare.attr('src', 'img/tile-back.png');
-	singleSquare.data('location', i);
+	singleSquare.data('selectedSquare', finalSet[i]);
 	singleSquare.data('picture', picture);
 	$('#game-board').append(singleSquare);
 }
@@ -39,6 +40,7 @@ var match = $('#match');
 var missed = $('#missed');
 var updatedTimer = $('#time')
 
+// Upon clicking start, game will begin
 $('#start').click(function() {
 	matchesLeftCounter = 8;
 	matchCounter = 0;
@@ -54,14 +56,21 @@ $('#start').click(function() {
 	});
 });
 
+// Unfinished code to manage the selected tiles
 $('#game-board img').click(function() {
-	$('this').fadeIn(100);
+	if(clickCount < 2) {
+		$(this).attr("src", $(this).data("selectedSquare"));
+		clickCount++;
+	} else if(clickCount >= 2) {
+		clickCount = 0;
+	}
 }); 
 
+// Updates the 4 statistics every second
 function updateStats() {
 	match.text('Successful Matches' + matchCounter);
 	missed.text('Matches Missed: ' + missedCounter);
-	left.text("You have " + matchesLeftCounter + " matches remaining");
+	left.text("You have: " + matchesLeftCounter + " matches remaining");
 	updatedTimer.text('Timer: ' + timeLength);
 }
 
