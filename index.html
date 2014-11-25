@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Just another Memory Game</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<header>
+			<h1>Just another Memory Game</h1>
+		</header>
+		<main>
+			<div class="container">
+				<div class="game-board">
+				</div>
+				<div class="game-info" id="game-info">
+					<div class="row" id="list-info">
+						<div class="col-xs-3">
+							<button type="button" id="start">New Game</button>
+						</div>
+						<div class="col-xs-3">
+							<p>Time:</p>
+							<p id="current-time">0</p>
+						</div>
+						<div class="col-xs-3">
+							<p>Successful Matches:</p>
+							<p id="matches">0</p>
+						</div>
+						<div class="col-xs-3">
+							<p>Matches Missed:</p>
+							<p id="mismatches">0</p>
+						</div>
+						<div class="col-xs-3">
+							<p>Matches Left:</p>
+							<p id="remaining">8</p>
+						</div>
+					</div>
+				</div>
+				<p id="win-message">Awesome Job! You have succeeded!</p>
+			</div>
+		</main>
+		<script src="js/app.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+	</body>
+</html>
