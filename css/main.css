@@ -1,18 +1,27 @@
-div#game-board{
+#game-board{
 	border: black 1px solid;
-	width: 800px;
-	height:540px;
+	width: 400px;
+	height:400px;
 	padding: 24px;
 	margin:0px auto;
 }
 
-div#game-board > div {
+
+#game-board img {
 	width: 80px;
 	height: 80px;
-	float:left;
-	margin:15px;
-	padding: 15px;
-	cursor:pointer;
+	margin:3px;
+	cursor: pointer;
+}
+
+h1 {
 	text-align:center;
 }
 
+body{
+	background-color:pink;
+}
+
+.button {
+	clear:left;
+}

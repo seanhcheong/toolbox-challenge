@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
 		<title>Just another Memory Game</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -12,36 +11,34 @@
 		</header>
 		<main>
 			<div class="container">
-				<div class="game-board">
+				<div id="game-board">
+				</div>
+				<div class="button">
+					<button type="button" id="start">New Game</button>
 				</div>
 				<div class="game-info" id="game-info">
 					<div class="row" id="list-info">
+
 						<div class="col-xs-3">
-							<button type="button" id="start">New Game</button>
+							<p id="time">Timer: 0</p>
 						</div>
 						<div class="col-xs-3">
-							<p>Time:</p>
-							<p id="current-time">0</p>
+							<p id="matches">Successful Matches: 0</p>
+						</div>
+						<div class="col-xs-3">					
+							<p id="missed">Matches Missed: 0</p>
 						</div>
 						<div class="col-xs-3">
-							<p>Successful Matches:</p>
-							<p id="matches">0</p>
-						</div>
-						<div class="col-xs-3">
-							<p>Matches Missed:</p>
-							<p id="mismatches">0</p>
-						</div>
-						<div class="col-xs-3">
-							<p>Matches Left:</p>
-							<p id="remaining">8</p>
+							<p id="left">You have 8 matches remaining</p>
 						</div>
 					</div>
 				</div>
-				<p id="win-message">Awesome Job! You have succeeded!</p>
+				<p id="victory">Wow! you finished just another memory game!</p>
 			</div>
 		</main>
-		<script src="js/app.js"></script>
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/bootstrap.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
